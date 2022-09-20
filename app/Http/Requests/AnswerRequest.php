@@ -27,7 +27,10 @@ class AnswerRequest extends FormRequest
     public function rules()
     {
         return [
-            'body' => 'required',
+            'body' => [
+                'required',
+                'unique:answers,body'
+            ],
         ];
     }
 }
